@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var varGS = 'def VAR in GS';
+        let letGS = 'def LET in GS';
+        const constGS = 'def CONST in GS';
+
+//Global defined - Global readed ==========================================       
+        console.log(varGS + ' read in GS');
+        console.log(letGS + ' read in GS');
+        console.log(constGS + ' read in GS');
+//Global defined - Global readed ==========================================
+
+function firstDefined() {
+            var varFSFirst = 'def in VAR in FS 1';
+            let letFSFirst = 'def in LET in FS 1';
+            const constFS = 'def in CONST in FS 1';
+        }
+        firstDefined();
+       
+        if (true) {
+//Global defined - Block readed ==========================================
+            console.log(varGS + ' read in BS');
+            console.log(letGS + ' read in BS');
+            console.log(constGS + ' read in BS');
+//Global defined - Block readed ==========================================
+
+            var varBS = 'def VAR in BS';
+            let letBS = 'def LET in BS';
+            const constBS = 'def CONST in BS';
+
+//Block defined - Block readed ==========================================
+            console.log(varBS + ' read in BS');
+            console.log(letBS + ' read in BS');
+            console.log(constBS + ' read in BS');
+//Block defined - Block readed ==========================================
+
+//Function defined - Block readed ==========================================
+        //console.log(varFSFirst + ' read in BS');//...is not defined...
+        //console.log(letFSFirst + ' read in BS');//...is not defined...
+        //console.log(constFSFirst + ' read in BS');//...is not defined...
+//Function defined - Block readed ==========================================
+        }
+
+        function secondDefined() {
+            var varFS = 'def in VAR in FS';
+
+//Global defined - Function readed ==========================================
+            console.log(varGS + ' read in FS 2');
+            console.log(letGS + ' read in FS 2');
+            console.log(constGS + ' read in FS 2');
+//Global defined - Function readed ==========================================
+
+//Block defined - Function readed ==========================================
+            console.log(varBS + ' read in FS 2');
+            //console.log(letBS + ' read in FS 2');//...is not defined...
+            //console.log(constBS + ' read in FS 2');//...is not defined...
+//Block defined - Function readed ==========================================
+        }
+        secondDefined();
+
+//Block defined - Global readed ==========================================
+        console.log(varBS + ' read in GS');
+        //console.log(letBS + ' read in GS');//...is not defined...
+        //console.log(constBS + ' read in GS');//...is not defined...
+//Block defined - Global readed ==========================================
+
+//Function defined - Global readed ==========================================
+        //console.log(varFS + ' read in GS');//...is not defined...
+        //console.log(letFS + ' read in GS');//...is not defined...
+        //console.log(constFS + ' read in GS');//...is not defined...
+//Function defined - Global readed ==========================================
+
+
+
+//**********************************************
+//Change a char in string:
+        let str = 'Pesho';
+        str[0] = 'G';
+        console.log(str); //Pesho (not work!)
+        str = str.replace('P', 'G');
+        console.log(str); //Gesho
+
+//The meaning of operator return:        
+        function serveDrinks(age) {
+                if (age < 18) {
+                        return;
+                }
+
+                console.log(age);
+                //serveVodka();
+        }
+        
+        serveDrinks(17); //nothing
+
+//Operation between Number and String:
+        let a = 1;
+        let b = 'two';
+        console.log(a + b); //1two
+        console.log(a - b); //NaN
+        console.log(a / b); //NaN
+
+//Convert String to Number:
+        let c = '2.2';
+        console.log(c); //'2.2'
+        console.log(Number(c)); //2.2
+        console.log(parseInt(c)); //2
+        console.log(parseFloat(c)); //2.2
+        console.log(+c); //2.2 (not good!)
+
+//Convert Number to String:
+        let d = 100;
+        console.log(d);
+        console.log(d.toString());
+
+//Strict verification:
+        console.log(10 === 10); //true
+        console.log(10 == '10'); //true
+        console.log(10 === '10'); //false
+
+//Boolean
+        let e = [1, 2, 3];
+        if (e) {
+                console.log('iam e');
+        }
+
+//Null, Undefined, false, 0, -0, ''  returned false
+        console.log(Boolean('false')); //T (because is string and has value!)
+        console.log(Boolean(false)); //F
+        //console.log(Boolean(Null)); //F
+        console.log(Boolean(0)); //F
+        console.log(Boolean(-0)); //F
+        console.log(Boolean()); //F
+        console.log(Boolean('')); //F
+        console.log(Boolean(10 / 'p')); //F
+        
+
+        
+
+
+
+    </script>
+</body>
+</html>
