@@ -1,3 +1,20 @@
+## Intermediate documents:
+*.eps
+*.pdf
+*.xlsx
+*.docx
+*.doc
+*.pptx
+*.png
+*.jpg
+*.msi
+*.exe
+*.zip
+
+## Generated if empty string is given at "Please type another file name for output:"
+.pdf
+Gramota/
+
 # Logs
 logs
 *.log
