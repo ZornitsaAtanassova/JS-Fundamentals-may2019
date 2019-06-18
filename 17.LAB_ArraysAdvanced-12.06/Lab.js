@@ -107,3 +107,40 @@ console.log(newArrOne);
 console.log(arrOne);
 console.log(`------------------------`);
 
+
+//===========================================
+// Access all of array elements front of behind
+    let arrTwo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    for (let element of arrTwo) {
+        console.log(element);
+    }
+    console.log(`------------------------`);
+
+// Access all of array elements backwards
+    for (let i = arrTwo.length-1; i >= 0 ; i--) {
+        console.log(arrTwo[i]);
+    }
+    console.log(`------------------------`);
+
+// Access the first element
+    console.log(arrTwo[0]);
+    // console.log(arrTwo.shift());
+// Access the last element
+    console.log(arrTwo[arrTwo.length - 1]);
+    // console.log(arrTwo.pop());
+// Access the middle element/elements
+    let lengthArr = arrTwo.length;
+    if (lengthArr % 2 !== 0) {
+        console.log(arrTwo[Math.floor(lengthArr / 2)]);
+    } else {
+        console.log(arrTwo[(lengthArr / 2) - 1] + ' ' + arrTwo[lengthArr / 2]);
+    }
+    console.log(`------------------------`);
+
+// Sum up all elements mirrored(огледално)
+    for (let i = 0; i < Math.floor(arrTwo.length/2); i++) {
+        // console.log(arr[i]);
+        let sum = Number(arrTwo[i]) + Number(arrTwo[arrTwo.length-1 - i]);
+        console.log(sum);
+    }
+    console.log(`------------------------`);
