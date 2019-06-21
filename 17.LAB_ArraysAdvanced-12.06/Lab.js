@@ -144,3 +144,15 @@ console.log(`------------------------`);
         console.log(sum);
     }
     console.log(`------------------------`);
+
+    console.log(`==========sort==========`);
+    // method "sort()". Default sorted by up order. For another sorting use compare function with argument pair of elements
+    const sortNewNewArrReturn = arrTwo.sort((a, b) => {
+        if (a > b) {
+            return
+        }
+    });
+    console.log(sortNewNewArrReturn, arrTwo);
+    console.log(`==========sort==========\n`);
+    
+    
