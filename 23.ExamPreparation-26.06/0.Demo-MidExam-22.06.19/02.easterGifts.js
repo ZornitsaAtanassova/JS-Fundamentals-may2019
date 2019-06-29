@@ -16,7 +16,9 @@ function easterGifts(input) {
         }
 
         if (command[0] === 'Required') {
+            if (command[2] >= 0 && command[2] < gifts.length -1) {
             gifts.splice(Number(command[2]), 1, command[1]);
+            }
         }
 
         if (command[0] === 'JustInCase') {

@@ -29,9 +29,11 @@ function lastStop(input) {
             let indexOfSecond = paintingsNumbers.indexOf(instruction[2]);
             // debugger;
             // console.log(indexOfFirst, indexOfSecond);
-            let tmp = paintingsNumbers[indexOfFirst];
-            paintingsNumbers[indexOfFirst] = paintingsNumbers[indexOfSecond];
-            paintingsNumbers[indexOfSecond] = tmp;        
+            if (indexOfFirst !== -1 && indexOfSecond !== -1) {
+                let tmp = paintingsNumbers[indexOfFirst];
+                paintingsNumbers[indexOfFirst] = paintingsNumbers[indexOfSecond];
+                paintingsNumbers[indexOfSecond] = tmp;  
+            }      
         }
 
         if (instruction[0] === 'Insert') {
