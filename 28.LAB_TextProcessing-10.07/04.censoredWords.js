@@ -1,7 +1,8 @@
 function censoredWords(text, word) {
     // Write a function that receives a text as a first parameter  and a single word as a second. Find all occurrences of that word in the text and replace them with the corresponding count of '*'.
 
-    function repeatCensoredStr(plainStr) {
+    // 1 solve: Long solution
+    /* function repeatCensoredStr(plainStr) {
         let censoredStr = '';
 
         for (let ch of plainStr) {
@@ -12,8 +13,7 @@ function censoredWords(text, word) {
     }
     // console.log(repeatCensoredStr(word));
 
-    // 1 solve: Long solution
-    /* function howManyAs(plainText, search) {
+    function howManyAs(plainText, search) {
         let counter = 0;
         let includingFromIndex = 0;
     
@@ -36,7 +36,7 @@ function censoredWords(text, word) {
 
     // 2 solve: Clear solution
     while (text.includes(word)) {
-        text = text.replace(word, repeatCensoredStr(word));
+        text = text.replace(word, '*'.repeat(word.length));
     }
 
     console.log(text);

@@ -28,9 +28,9 @@ console.log(str.indexOf('o'));
 console.log(str.lastIndexOf('end'));
 
 // Find how many times a string includes a character/substring
-const strThree = 'The indexOf() method returns the index within the calling String object of the first occurrence of the specified value, starting the search at fromIndex. Returns -1 if the value is not found.';
+const strThree = 'The indexOf() method returns the index within the calling String object of the first occurrence of the specified value, starting the search at fromIndex. Returns -1 if the value is not found, there is ...';
 
-function howManyAs(sentence) {
+function howManyAsSubstr(sentence) {
     let counter = 0;
     let includingFromIndex = 0;
 
@@ -40,7 +40,20 @@ function howManyAs(sentence) {
     }
     return counter;
 }
-console.log(howManyAs(strThree));
+console.log(howManyAsSubstr(strThree));
+
+function howManyAsWord(strThree, searchWord) {
+    let words = strThree.split(' ');
+    let counter = 0;
+    
+    for (let word of words) {
+        if (word === searchWord) {
+            counter++;
+        }
+    }
+    return counter;
+}
+console.log(howManyAsWord(strThree, 'the'));
 
 /* let searchTerm = 'the';
 let indexOfFirst = strThree.indexOf(searchTerm);
@@ -94,5 +107,122 @@ function removeWordOccurrence(word,str) {
 }
 const leftOut = removeWordOccurrence('key', 'kicegiciceeb');
 console.log(leftOut);
+console.log(`---------------------------`);
 // ******************Replace******************
-console.log(str.split(''));
+
+// ******************Split******************
+console.log(str.split(' oot'));
+// параметъра на split() се изтрива, т.е. не се добавя в масива от подстрингове разделени от този параметър! 
+console.log(str);
+console.log(`---------------------------`);
+// ******************Split******************
+
+// ******************Includes******************
+console.log(str.includes(' oot')); 
+console.log(`---------------------------`);
+// ******************Includes******************
+
+// ******************Repeat******************
+const curseWords = [
+    'shit',
+    'hell',
+    'fuck',
+    'F0ck',
+    'FUCK!!!',
+    'FK'
+];
+
+function censorWords(someStr) {
+    let sanitized = someStr.substring(0);
+
+    curseWords.forEach(curse => {
+        const index = sanitized.indexOf(curse);
+        const reg = new RegExp(curse, 'g');
+
+        if (index !== -1) {
+            const len = 1;
+            const firstThree = curse.substr(0, len);
+            const hiddenChars = '*'.repeat(curse.length - len);
+
+            sanitized = sanitized.replace(reg, firstThree + hiddenChars);
+        }
+    });
+
+    return sanitized;
+}
+
+const sanitized = censorWords('This code is so shit FK!!! hell can freeze over');
+console.log(sanitized);
+
+console.log(`---------------------------`);
+// ******************Repeat******************
+
+// ******************Trim******************
+function handleUserInput(input) {
+    const data = {};
+
+    data.input = input.trim();
+    console.log(data);
+}
+
+handleUserInput('John  ');
+
+// console.log('   Trim Start  '.trimStart()); //Don't work???
+// console.log('   Trim End  '.trimEnd()); //Don't work???
+console.log('hello     world !'.replace(/ /g, ''));
+
+console.log(`---------------------------`);
+// ******************Trim******************
+
+// ******************CharCodeAt*****************
+let strFive = 'AbCdEfGhIjKlMnOpQrStUvWxYz';
+let upper = [];
+let lower = [];
+
+for (let i = 0; i < strFive.length; i++) {
+    let charCode = strFive.charCodeAt(i);
+    //console.log(charCode);
+    if (charCode >= 65 && charCode <= 90) {
+        upper.push(strFive[i]);
+    } else {
+        lower.push(strFive[i]);
+    }
+}
+
+console.log(`${upper}\n${lower}`);
+
+console.log(`---------------------------`);
+// ******************CharCodeAt*****************
+
+// ***************PadStart/PadEnd**************
+let strSix = '010';
+console.log(strSix.padStart(8, '0'));
+console.log(strSix.padEnd(10, '.'));
+
+console.log(`---------------------------`);
+// ***************PadStart/PadEnd**************
+
+// ***************startsWith/endWith************
+console.log(strSix.startsWith('0'));
+console.log(strSix.endsWith('.'));
+
+let strSeven = 'When .... ? ';
+const questionWords = ['what', 'why', 'when', 'should', 'how', 'is', 'can'];
+
+function isQuestion(input) {
+    let isIt = false;
+
+    questionWords.forEach(word => {
+        if (input.toLowerCase().startsWith(word)  && input.trim().endsWith('?')) {
+            isIt = true;
+        }
+    });
+
+    return isIt;
+}
+
+console.log(isQuestion(strSeven));
+console.log(strSeven);
+
+console.log(`---------------------------`);
+// ***************startsWith/endWith************
