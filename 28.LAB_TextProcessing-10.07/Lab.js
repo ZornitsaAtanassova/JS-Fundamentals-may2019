@@ -1,5 +1,5 @@
 // *************Define***********
-let str = "Hello don't oot..The end...";
+let str = "Hello don't o0t..The end..!";
 let strOne = 'Hello don\'t';   // Preferred in JS communities! With back-slash(\) escaped special symbols!
 let strTwo = `Hello don't ${str}`;   // Interpolation. Template literals since ECMAScript 2015.
 
@@ -23,37 +23,55 @@ console.log(`---------------------------`);
 
 
 // *********Access characters and index*********
-console.log(str.charAt(1));
+console.log(str.charAt(0));
+console.log(str.charAt(str.length - 1));
+console.log(str.charCodeAt(str.length - 1));
+console.log(str.codePointAt(str.length / 2));
+console.log(str.fontsize(7));
 console.log(str.indexOf('o'));
 console.log(str.lastIndexOf('end'));
 
+let hello = 'Hello, World!';
+console.log(hello.slice(7));
+console.log(hello.slice(7, 12));
+console.log(hello.slice(-6));
+console.log(hello.slice(-6, -1));
+
 // Find how many times a string includes a character/substring
 const strThree = 'The indexOf() method returns the index within the calling String object of the first occurrence of the specified value, starting the search at fromIndex. Returns -1 if the value is not found, there is ...';
+const substrThree = 'the';
 
-function howManyAsSubstr(sentence) {
+function howManyAsSubstr(str, searchSubstr) {
     let counter = 0;
     let includingFromIndex = 0;
+    let counterWord = 0;
 
-    while (sentence.indexOf('the', includingFromIndex) !== -1) {
-        includingFromIndex = sentence.indexOf('the', includingFromIndex) + 1;
+    while (str.indexOf(searchSubstr, includingFromIndex) !== -1) {
+        /* console.log(str.substr(includingFromIndex -2, 5));
+        if (str.substr(includingFromIndex -2, 5) === 'the ') {
+            counterWord++;
+        } // for word count! But doesn't work!!! */
+
+        includingFromIndex = str.indexOf(searchSubstr, includingFromIndex) + 1;
+        // console.log(includingFromIndex-1);
         counter++;
     }
     return counter;
 }
-console.log(howManyAsSubstr(strThree));
+console.log(howManyAsSubstr(strThree, substrThree));
 
-function howManyAsWord(strThree, searchWord) {
-    let words = strThree.split(' ');
+function howManyAsWord(str, searchWord) {
+    let wordsArr = str.split(' ');
     let counter = 0;
     
-    for (let word of words) {
+    for (let word of wordsArr) {
         if (word === searchWord) {
             counter++;
         }
     }
     return counter;
 }
-console.log(howManyAsWord(strThree, 'the'));
+console.log(howManyAsWord(strThree, substrThree));
 
 /* let searchTerm = 'the';
 let indexOfFirst = strThree.indexOf(searchTerm);
@@ -94,7 +112,7 @@ console.log(str);
 // ******************Substring******************
 
 // ******************Replace******************
-let strFour = 'kicegiciceeb';
+let strFour = 'kicegi★cIceeb';
 console.log(strFour.replace('ice', ''));
 console.log(strFour.replace(/ice/gi, ''));
 
@@ -105,8 +123,20 @@ function removeWordOccurrence(word,str) {
     }
     return copy;
 }
-const leftOut = removeWordOccurrence('key', 'kicegiciceeb');
+const leftOut = removeWordOccurrence('ice', 'kicegiciceeb');
 console.log(leftOut);
+
+function solve(word, text) {
+    let old;
+    while (old !== text) {
+      old = text;
+      text = text.replace(word, '');
+    }
+  
+    console.log(text);
+ }
+solve('ice', strFour);
+
 console.log(`---------------------------`);
 // ******************Replace******************
 
@@ -118,7 +148,7 @@ console.log(`---------------------------`);
 // ******************Split******************
 
 // ******************Includes******************
-console.log(str.includes(' oot')); 
+console.log(str.includes(' o0t')); 
 console.log(`---------------------------`);
 // ******************Includes******************
 
@@ -151,7 +181,7 @@ function censorWords(someStr) {
     return sanitized;
 }
 
-const sanitized = censorWords('This code is so shit FK!!! hell can freeze over');
+const sanitized = censorWords('This code is so shit FK!!! Hell can freeze over');
 console.log(sanitized);
 
 console.log(`---------------------------`);
@@ -175,7 +205,7 @@ console.log(`---------------------------`);
 // ******************Trim******************
 
 // ******************CharCodeAt*****************
-let strFive = 'AbCdEfGhIjKlMnOpQrStUvWxYz';
+let strFive = 'AbCdEfGhIjKlMnOpQrStUvWxYzZZZ';
 let upper = [];
 let lower = [];
 
@@ -226,3 +256,25 @@ console.log(strSeven);
 
 console.log(`---------------------------`);
 // ***************startsWith/endWith************
+
+function upperCases(inp) {
+    let upper = '';
+    for (let i = 0; i < inp.length; i++) {
+        let charCode = inp.charCodeAt(i);
+    
+        if (charCode >= 65 && charCode <= 90) {
+            upper += `${inp[i]} `;
+        } else {
+            inp[i];   // Everything else!
+        }
+    }
+    return upper;
+}
+console.log(upperCases('Hello, World!'));
+console.log('akaka kaka l'.split(' '));
+
+let textOne = "My name is John";
+console.log(textOne.startsWith('My', 1)); // Expected output: true
+
+let textTwo = "My name is Johne";
+console.log(textTwo.endsWith('e', 7)); // Expected output: true
