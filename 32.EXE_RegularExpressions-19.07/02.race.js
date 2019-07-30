@@ -1,22 +1,21 @@
 function race(input) {
-    // 
+// *=*=*=*=*=*=*=*I: Manipulate and Store at object*=*=*=*=*=*=*
+    // console.log(input) 
     let participants = input.shift().split(', ');
     // console.log(participants);
-
     let results = [];
-
 
     for (let line of input) {
         if (line === 'end of race') {
             break;
         }
 
-        let patternAlphabetical = /[A-Za-z]+/g;
+        let patternAlphabetical = /[A-Za-z]/g;
         let patternNumerical = /\d/g;
 
         let nameMatched = line.match(patternAlphabetical).join('');
 
-    // ********Check including in race list:********
+    // ********Check is including in race list?********
         if (participants.includes(nameMatched)) {
             let kilometers = line.match(patternNumerical).map(Number);
             let distance = 0;
@@ -48,18 +47,18 @@ function race(input) {
                 results.push(tmpObj);
             }            
         }
-    // ********Check including in race list:********
+    // ********Check is including in race list?********
     }
     // console.log(results);
-
-// *=*=*=*=*=*=*=*=*Sorting*=*=*=*=*=*=*=*=*=*=
+// *=*=*=*=*=*=*=*I: Manipulate and Store at object*=*=*=*=*=*=*
+// *=*=*=*=*=*=*=*=*=*II: Sorting and Print*=*=*=*=*=*=*=*=*=*=
 
 // console.log(results.sort((a, b) => a.totalDistance < b.totalDistance));
     results.sort((a, b) => a.totalDistance < b.totalDistance);
     console.log(`1st place: ${results[0].name}`);
     console.log(`2nd place: ${results[1].name}`);
     console.log(`3rd place: ${results[2].name}`);
-// *=*=*=*=*=*=*=*=*Sorting*=*=*=*=*=*=*=*=*=*=
+// *=*=*=*=*=*=*=*=*=*II: Sorting and Print*=*=*=*=*=*=*=*=*=*=
 }
 
 race([ 
