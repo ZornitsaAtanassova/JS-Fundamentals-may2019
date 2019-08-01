@@ -10,8 +10,6 @@ function convertJsonToObject(jsonStr) {
 
         console.log(`${key}: ${value}`);
     }
-    console.log(JSON.stringify({ x: 5, y: '6' }, null, 1));
-    console.log(JSON.parse('{"x":5, "y":"6"}'));
 }
 
 convertJsonToObject('{"name": "George", "age": 40, "town": "Sofia"}');  // name: George

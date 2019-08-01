@@ -188,18 +188,22 @@
 
 
 // JSON - ???   
+console.log(JSON.stringify({ x: 5, y: '6' }, null, 4));
+console.log(JSON.parse('{"x":5, "y":"6"}'));
+
 // Classes - ???
     class Dog {
-        constructor(breed, hasRabbies, canTalk, doesItBite, hasLegs) {
-        this.breed = breed;
-        this.hasRabbies = hasRabbies;
-        this.canTalk = canTalk;
-        this.doesItBite = doesItBite;
-        this.hasLegs = hasLegs;
+        constructor(name, breed, hasRabbies, canTalk, doesItBite, hasLegs) {
+            this.name = name;
+            this.breed = breed;
+            this.hasRabbies = hasRabbies;
+            this.canTalk = canTalk;
+            this.doesItBite = doesItBite;
+            this.hasLegs = hasLegs;
         }
     }
 
-    const myDog = new Dog('French Bulldog', false, false, true, true);
+    const myDog = new Dog('my Dog', 'French Bulldog', false, false, true, true);
 
     myDog.canTalk = false;
     myDog.doesItBite = true;
@@ -226,7 +230,8 @@
             } */
         }
     }
-    const mony = new Dog('French Bulldog', false, false, false, true);
-    const johny = new Dog('Koli', false, false, true, true);
+    const mony = new Dog('Mony', 'French Bulldog', false, false, false, true);
+    const johny = new Dog('Johny', 'Koli', false, false, true, true);
 
-    console.log (mony);
+    console.log(mony);
+    console.log(johny);
