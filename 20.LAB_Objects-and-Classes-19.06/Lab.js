@@ -190,14 +190,17 @@
 // JSON - ???   
 // Classes - ???
     class Dog {
-        breed = 'Bulldog';
-        hasRabbies = false;
-        canTalk = true;
-        doesItBite = true;
-        hasLegs = true;
+        constructor(breed, hasRabbies, canTalk, doesItBite, hasLegs) {
+        this.breed = breed;
+        this.hasRabbies = hasRabbies;
+        this.canTalk = canTalk;
+        this.doesItBite = doesItBite;
+        this.hasLegs = hasLegs;
+        }
     }
 
-    const myDog = new Dog();
+    const myDog = new Dog('French Bulldog', false, false, true, true);
+
     myDog.canTalk = false;
     myDog.doesItBite = true;
     
@@ -225,3 +228,5 @@
     }
     const mony = new Dog('French Bulldog', false, false, false, true);
     const johny = new Dog('Koli', false, false, true, true);
+
+    console.log (mony);

@@ -1,0 +1,14 @@
+{
+    "books": [
+        {
+            "isbn": 123456789,
+            "title": "The Lord of the Rings",
+            "author": "J. R. R. Tolkien"
+        },
+        {
+            "isbn": 987654321,
+            "title": "Hobbit",
+            "author": "J. R. R. Tolkien"
+        }
+    ]
+}
