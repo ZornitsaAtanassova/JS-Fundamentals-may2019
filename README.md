@@ -4,9 +4,9 @@ _This repository contains tasks resolved with JavaScript. Tasks' terms can be se
 
 ---
 
-## Summary:
+## Topics:
 JavaScript Topics | Common Topics
------------- | -------------
+----------------- | -------------
 :heavy_check_mark: Basic Syntax, Conditional Statements and Loops | :heavy_check_mark: Course Introduction. IT Talks. Language Comparison
 :heavy_check_mark: Data Types and Variables | :heavy_check_mark: Basic HTML
 :heavy_check_mark: Arrays | :heavy_check_mark: Basic CSS
@@ -16,7 +16,35 @@ JavaScript Topics | Common Topics
 :heavy_check_mark: Associative Arrays | :heavy_check_mark: Intro to Computer Science
 :heavy_check_mark: Text Processing | :heavy_check_mark: Database Basics
 :heavy_check_mark: Regular Expressions | :heavy_check_mark: Git and GitHub
-:heavy_check_mark: Unit Testing | :heavy_check_mark: QA Introduction
+... | :heavy_check_mark: Unit Testing
+... | :heavy_check_mark: QA Introduction
 ... | :heavy_check_mark: Basic Web Project
+
+---
+
+## Summary:
+
+##### Duration of course: _13/05/2019 - 04/08/2019_
+
+##### Certificate: _[Еxcellent(5.53)]()_
+
+##### Credits: _18_
+
+##### Middle Exam result: _290/300_
+
+##### Final Exam result: _200/300_
+
+##### Lecturers:
+* [William Abboud](https://softuni.bg/users/profile/show/williamabboud) - Competencies: JavaScript, React, Front-End Development, UX/UI Design. (_Senior Front-end Developer at Softuni_)
+* Kiril Kirilov
+* Ivaylo Papazov
+* Victor Kostadinov
+* Ivaylo Kenov - Competencies: C#, ASP.NET, JavaScript. (_Chief Technical Officer at SoftUni_)
+* Martin Paunov
+* Alen Paunov
+* Maya Bratanova
+* Hristomir Asenov
+* Ivaylo Dimitrov
+* [Svetlin Nakov](https://softuni.bg/users/profile/show/nakov) - _Co-founder SoftUni_
 
 ---
