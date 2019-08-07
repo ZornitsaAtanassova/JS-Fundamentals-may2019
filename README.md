@@ -16,8 +16,8 @@ JavaScript Topics | Common Topics
 :heavy_check_mark: Associative Arrays | :heavy_check_mark: Intro to Computer Science
 :heavy_check_mark: Text Processing | :heavy_check_mark: Database Basics
 :heavy_check_mark: Regular Expressions | :heavy_check_mark: Git and GitHub
-... | :heavy_check_mark: Unit Testing
 ... | :heavy_check_mark: QA Introduction
+... | :heavy_check_mark: Unit Testing
 ... | :heavy_check_mark: Basic Web Project
 
 ---
