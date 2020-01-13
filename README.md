@@ -26,7 +26,7 @@ JavaScript Topics | Common Topics
 
 ##### Duration of course: _13/05/2019 - 04/08/2019_
 
-##### Certificate: _[Еxcellent(5.53)]()_
+##### Certificate: _[Еxcellent(5.53)](https://github.com/ZornitsaAtanassova/JS-Fundamentals-may2019/blob/master/39.PracticalExam-03.08.2019/Certificate-JS-Fundamentals-May-2019.pdf)_
 
 ##### Credits: _18_
 
